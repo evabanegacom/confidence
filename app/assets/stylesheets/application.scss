@@ -13,46 +13,35 @@
  *= require_tree .
  *= require_self
  */
+ @import 'bulma';
 
- @import "bulma";
-
- * {
-  margin: 0;
-  padding: 0;
-  border: none;
+ .navbar-brand .title {
+    color: white;
  }
-  
+
+ .image {
+    border-radius: 50%;
+    img {
+      border-radius: 50%;
+    }
+ }
+
+ .notification:not(:last-child) {
+    margin-bottom: 0;
+ }
+
  .pic {
-  width:50px;
-  height: 100px;
-  border-radius: 30%;
+  height: 100%;
+  width: 100%;
  }
 
- .pic1 {
-  width: 150px;
-  height: 150px;
+ .test {
+  background-color: rgb(17, 243, 194);
+  font-weight: 700;
+  color: rgb(41, 18, 9);
+  font-family: Arial, Helvetica, sans-serif;
+
+  .cap {
+    color: rgb(53, 53, 243);
+  }
  }
-
-.navbar {
-  background-color: red;
-}
-
-.position {
-  float: right;
-  border: 3px solid blue;
-}
-
-.navbar-brand .title {
-	color: white;
-}
-
-// round images
-.image {
-	border-radius: 50%;
-	img {
-		border-radius: 50%;
-	}
-}
-.notification:not(:last-child) {
-	margin-bottom: 0;
-}

@@ -4,19 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :posts, dependent: :destroy
-  has_one_attached :image, dependent: :destroy
-  validate :image_type
-
-  private
-  def image_type
-    if image.attached? == false
-      errors.add(:image, 'is missing')
-    end
-    if image.attached? == true
-     if !image.content_type.in?(%('images/jpg image/jpeg image/png'))
-       errors.add(:image, 'needs to be ajpeg or png')
-     end
-    end
-  end
+  has_many :tweets, dependent: :destroy
+  validates_presence_of :phone_number
+  validates_uniqueness_of :phone_number
 end
