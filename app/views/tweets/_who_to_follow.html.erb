@@ -1,0 +1,22 @@
+<div class='column'>
+  <nav class='panel'>
+    <p class='panel-heading'>who's attending</p>
+  <div class='panel-block'>
+    <article class='media'>
+      <div class='media-left'>
+        <figure class='image is-32x32'>
+          <img src='https://bulma.io/images/placeholders/64x64.png'>
+        </figure>
+      </div>
+      <% @users = User.all %>
+      <% @users.each do |user| %>
+      <div class='media-content'>
+        <div class='content'>
+  <strong><%= user.name %></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small><%= user.phone_number %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</small><small><%= user.email %></small>
+<% end %>
+        </div>
+      </div>
+    </article>
+  </div>
+  </nav>
+</div>
